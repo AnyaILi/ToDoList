@@ -8,14 +8,41 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showNewTask = false
+    @FetchRequest(
+            entity: ToDo.entity(), sortDescriptors: [ NSSortDescriptor(keyPath: \ToDo.id, ascending: false) ])
+        
+    var toDoItems: FetchedResults<ToDo>
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            HStack{
+                Text("To-Do List")
+                    .font(.system(size: 40))
+                    .fontWeight(.black)
+                Spacer()
+                
+                Button(action: {
+                    self.showNewTask = true
+                }){
+                    Text("+")
+                }
+            }
+            .padding()
+            Spacer()
+            List {
+                ForEach (toDoItems) { toDoItem in
+                    if toDoItem.isImportant == true {
+                        Text("‼️" + (toDoItem.title ?? "No title"))
+                    } else {
+                                        Text(toDoItem.title ?? "No title")
+                    }                }
+            }
+            // .listStyle(.plain)
         }
-        .padding()
+        if showNewTask {
+            NewToDoView(showNewTask: $showNewTask, title: "", isImportant: false)
+        }
+        
     }
 }
 

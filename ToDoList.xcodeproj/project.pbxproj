@@ -11,6 +11,10 @@
 		BD0B19192A6728CE0078F0E9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0B19182A6728CE0078F0E9 /* ContentView.swift */; };
 		BD0B191B2A6728D00078F0E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD0B191A2A6728D00078F0E9 /* Assets.xcassets */; };
 		BD0B191E2A6728D00078F0E9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD0B191D2A6728D00078F0E9 /* Preview Assets.xcassets */; };
+		BD0B19252A6729410078F0E9 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0B19242A6729410078F0E9 /* ToDoItem.swift */; };
+		BD0B19272A672B400078F0E9 /* NewToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0B19262A672B400078F0E9 /* NewToDoView.swift */; };
+		BD0B19292A6735ED0078F0E9 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0B19282A6735ED0078F0E9 /* Persistence.swift */; };
+		BD0B192C2A6737B00078F0E9 /* ToDoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD0B192A2A6737B00078F0E9 /* ToDoList.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		BD0B19182A6728CE0078F0E9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BD0B191A2A6728D00078F0E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD0B191D2A6728D00078F0E9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BD0B19242A6729410078F0E9 /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
+		BD0B19262A672B400078F0E9 /* NewToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToDoView.swift; sourceTree = "<group>"; };
+		BD0B19282A6735ED0078F0E9 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		BD0B192B2A6737B00078F0E9 /* ToDoList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoList.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +59,12 @@
 		BD0B19152A6728CE0078F0E9 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				BD0B192A2A6737B00078F0E9 /* ToDoList.xcdatamodeld */,
+				BD0B19282A6735ED0078F0E9 /* Persistence.swift */,
 				BD0B19162A6728CE0078F0E9 /* ToDoListApp.swift */,
 				BD0B19182A6728CE0078F0E9 /* ContentView.swift */,
+				BD0B19262A672B400078F0E9 /* NewToDoView.swift */,
+				BD0B19242A6729410078F0E9 /* ToDoItem.swift */,
 				BD0B191A2A6728D00078F0E9 /* Assets.xcassets */,
 				BD0B191C2A6728D00078F0E9 /* Preview Content */,
 			);
@@ -138,7 +150,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD0B19192A6728CE0078F0E9 /* ContentView.swift in Sources */,
+				BD0B192C2A6737B00078F0E9 /* ToDoList.xcdatamodeld in Sources */,
 				BD0B19172A6728CE0078F0E9 /* ToDoListApp.swift in Sources */,
+				BD0B19252A6729410078F0E9 /* ToDoItem.swift in Sources */,
+				BD0B19272A672B400078F0E9 /* NewToDoView.swift in Sources */,
+				BD0B19292A6735ED0078F0E9 /* Persistence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +353,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BD0B192A2A6737B00078F0E9 /* ToDoList.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BD0B192B2A6737B00078F0E9 /* ToDoList.xcdatamodel */,
+			);
+			currentVersion = BD0B192B2A6737B00078F0E9 /* ToDoList.xcdatamodel */;
+			path = ToDoList.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BD0B190B2A6728CE0078F0E9 /* Project object */;
 }
