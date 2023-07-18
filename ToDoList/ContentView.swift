@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) var context
     @State private var showNewTask = false
     @FetchRequest(
             entity: ToDo.entity(), sortDescriptors: [ NSSortDescriptor(keyPath: \ToDo.id, ascending: false) ])
@@ -34,8 +35,11 @@ struct ContentView: View {
                     if toDoItem.isImportant == true {
                         Text("‼️" + (toDoItem.title ?? "No title"))
                     } else {
-                                        Text(toDoItem.title ?? "No title")
-                    }                }
+                        Text(toDoItem.title ?? "No title")
+                    }
+                    
+                }
+                .onDelete(perform: deleteTask)
             }
             // .listStyle(.plain)
         }
@@ -43,6 +47,17 @@ struct ContentView: View {
             NewToDoView(showNewTask: $showNewTask, title: "", isImportant: false)
         }
         
+    }
+    private func deleteTask(offsets: IndexSet) {
+            withAnimation {
+            offsets.map { toDoItems[$0] }.forEach(context.delete)
+
+            do {
+                try context.save()
+            } catch {
+                print(error)
+            }
+        }
     }
 }
 
